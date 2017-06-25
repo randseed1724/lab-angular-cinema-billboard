@@ -7,16 +7,17 @@ import movieList from '../movieList';
 
 @Injectable()
 export class moviesService {
-  movies: : Object[];
+  movies: Object[];
+  getMovies: Object[];
   id: number = 0;
-  title: string = Coming Soon;
-  poster: string = Poster Available;
-  synopsis: string = Movie Synopsis;
-  genres: Array<Strings>
+  title: string = "Coming Soon";
+  poster: string = "Poster Available";
+  synopsis: string = "Movie Synopsis";
+  genres: Array<String>
   year: number = 2017;
-  director: string = Petrigruv Lesmua;
-  actors: Array<Strings>
-  hours: Array<Strings>
+  director: string = "Petrigruv Lesmua";
+  actors: Array<String>
+  hours: Array<String>
   room: number = 1;
 
   constructor() {}
@@ -25,8 +26,12 @@ export class moviesService {
     this.movies = movieList;
   }
 
-   getmovies()
+   getmovies() {
+     this.movies.unshift(this.getMovies);
+   }
 
-   getMovie(id)
+   getMovie(id) {
+     this.id.push(this.getMovies);
+   }
 
 }
