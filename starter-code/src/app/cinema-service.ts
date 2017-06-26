@@ -1,14 +1,11 @@
 import { Injectable } from '@angular/core';
 import movieList from '../movieList';
 
-// import { Http, Headers } from '@angular/http';
-// import { Observable } from 'rxjs/Observable';
-// import 'rxjs/add/operator/toPromise';
-
 @Injectable()
 export class moviesService {
+  //Movies List
   movies: Object[];
-  getMovies: Object[];
+  //Data from movies
   id: number = 0;
   title: string = "Coming Soon";
   poster: string = "Poster Available";
@@ -19,19 +16,40 @@ export class moviesService {
   actors: Array<String>
   hours: Array<String>
   room: number = 1;
+  //Array of Movies
+  getMovies: Object[];
+  //Array of Movies IDs
+  getMoviesIds: Object[];
 
-  constructor() {}
 
-  ngOnInit() {
+  constructor() {
     this.movies = movieList;
+  console.log('Get movies1', this.getmovies() );
   }
 
-   getmovies() {
-     this.movies.unshift(this.getMovies);
+  ngOnInit() {
+  }
+
+   getmovies(): Array<Object> {
+     return  this.movies;
    }
 
-   getMovie(id) {
-     this.id.push(this.getMovies);
+   getMovie(thisId: number): Object {
+
+     let eachId;
+
+    this.movies.forEach((oneMovie)=>{
+      console.log("oneMovie", oneMovie)
+           if(oneMovie.id == thisId){
+             return eachId = oneMovie;
+           }
+           return eachId;
+         })
+           console.log(eachId)
+       return eachId;
    }
 
+    //  getMovie(id){
+    //    this.movies.filter(x => x.id === id)
+    //  }
 }
