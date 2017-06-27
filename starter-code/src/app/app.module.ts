@@ -9,6 +9,16 @@ import { MyHomeComponent } from './my-home/my-home.component';
 import { MyMovieComponent } from './my-movie/my-movie.component';
 
 
+//Routers
+import { RouterModule, Routes } from '@angular/router';
+
+
+const routes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home',  component: MyHomeComponent },
+  { path: 'movie/:id', component: MyMovieComponent }
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +28,8 @@ import { MyMovieComponent } from './my-movie/my-movie.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(routes)  //  <!-- "routes" is the array defined above
   ],
   providers: [moviesService],
   bootstrap: [AppComponent]
