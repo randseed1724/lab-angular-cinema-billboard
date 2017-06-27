@@ -25,6 +25,9 @@ export class moviesService {
   constructor() {
     this.movies = movieList;
   console.log('Get movies1', this.getmovies() );
+  console.log('Movies', movieList)
+
+
   }
 
   ngOnInit() {
@@ -34,12 +37,13 @@ export class moviesService {
      return  this.movies;
    }
 
-   getMovie(thisId: number): Object {
+  //  getMovie(thisId: number): Object {
+getMovie(thisId) {
 
      let eachId;
 
     this.movies.forEach((oneMovie)=>{
-      console.log("oneMovie", oneMovie)
+      console.log("oneMovie: ", oneMovie);
            if(oneMovie.id == thisId){
              return eachId = oneMovie;
            }
