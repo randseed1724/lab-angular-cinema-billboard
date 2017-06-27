@@ -1,4 +1,4 @@
-const movieList: Object[] =
+const movieList =
 [
     {
     id: 1,

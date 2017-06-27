@@ -5,11 +5,15 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { moviesService } from  './cinema-service';
+import { MyHomeComponent } from './my-home/my-home.component';
+import { MyMovieComponent } from './my-movie/my-movie.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MyHomeComponent,
+    MyMovieComponent
   ],
   imports: [
     BrowserModule,

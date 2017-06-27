@@ -42,8 +42,9 @@ getMovie(thisId) {
 
      let eachId;
 
-    this.movies.forEach((oneMovie)=>{
-      console.log("oneMovie: ", oneMovie);
+    movieList.forEach((oneMovie)=>{
+      console.log("oneMovie: ", oneMovie.id );
+
            if(oneMovie.id == thisId){
              return eachId = oneMovie;
            }
